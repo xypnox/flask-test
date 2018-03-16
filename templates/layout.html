@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    {% block header %}
+    <div class="header">
+        <h1>A Flask Test Website</h1>
+        <hr />
+    </div>
+    {% endblock %}
+
+    {% block content %}
+        <div class="content">
+            <p>Hi, This is Awesomeness</p>
+            {% if name %}
+            <h1>Hello {{ name }}</h1>
+            {% endif %}
+        </div>
+    {% endblock %}
+
+
+    {% block footer %}
+    <div class="footer">
+        <p>A flask test</p>
+    </div>
+    {% endblock %}
+</body>
